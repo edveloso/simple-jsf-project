@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+</head>
+<body>
+
+
+	<div style="background-color: #ededed">
+		<h1>Sistema de controle de pessoas</h1>
+		<br />
+	</div>
+	<br />
+   <fieldset>
+      <legend>Formulário de castro</legend>
+		<h:form>
+			  <h:panelGrid columns="3">
+			      Nome
+			      <h:inputText  id="nome"  value="#{pessoaControle.pessoa.nome}" required="true"></h:inputText>
+			      <h:message for="nome"></h:message>
+			      
+			  Nascimento
+			      <h:inputText  id="nascimento"  value="#{pessoaControle.pessoa.nascimento}"  required="true">
+			         <f:convertDateTime pattern="dd/MM/yyyy" ></f:convertDateTime>
+			      </h:inputText>
+			      <h:message for="nascimento"></h:message>
+			      
+			     Sexo
+			      <h:inputText  id="sexo"  value="#{pessoaControle.pessoa.sexo}" required="true"></h:inputText>
+			      <h:message for="sexo"></h:message>
+			      
+			      <h:commandButton value="Salvar" action="#{pessoaControle.salvar}"></h:commandButton>
+			      
+			  </h:panelGrid>
+			  
+			  
+		</h:form>
+</fieldset>
+
+</body>
+</html>

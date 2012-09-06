@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html"
+>
+<head>
+
+<style>
+<!--
+   .hcl {
+      background-color: #adadad
+      
+   }
+   
+   .par{
+     background-color: silver;
+   }
+   
+   .impar{
+     background-color: white;
+   }
+   
+-->
+</style>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Lista de pessoas JSF 2.O</title>
+</head>
+<h:body>
+
+
+<div style="background-color: #ededed">
+    <h1>Sistema de controle de pessoas</h1>
+     <br/>
+    </div>
+     <br/>
+
+<div align="center"> 
+
+     
+
+<h:form>
+
+<div style="width: 80%"  align="left">
+    	<h:commandLink value="[+] Novo Cadastro" action="#{pessoaControle.iniciarCadastro}"></h:commandLink>
+    	<br/>
+    	<br/>
+</div>
+
+  <div>
+    <h:dataTable value="#{pessoaControle.pessoas}" var="pessoa"
+       headerClass="hcl" rowClasses="impar, par" style="width: 80%"
+    >
+       <f:facet name="header">
+         Lista de Pessoas
+       </f:facet>
+            
+      <h:column>
+        <f:facet name="header">
+           Nome
+        </f:facet>
+           #{pessoa.nome}
+      </h:column>
+    
+      <h:column>
+        <f:facet name="header">
+           Data de Nascimento
+        </f:facet>
+           #{pessoa.nascimento}
+      </h:column>
+      
+      <h:column>
+        <f:facet name="header">
+           Sexo
+        </f:facet>
+           #{pessoa.sexo}
+      </h:column>
+
+      <h:column>
+        <f:facet name="header">
+           Opções
+        </f:facet>
+        
+           <h:commandLink action="#{pessoaControle.deletar(pessoa.codigo)}">
+              Deletar
+           </h:commandLink>
+            | 
+           <h:commandLink action="#{pessoaControle.iniciarEdicao(pessoa.codigo)}">
+              Editar
+           </h:commandLink>
+      </h:column>
+    </h:dataTable>
+    
+    </div>
+    
+   </h:form>
+   </div>
+
+
+</h:body>
+</html>
