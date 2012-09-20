@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
   xmlns:f="http://java.sun.com/jsf/core"
   xmlns:h="http://java.sun.com/jsf/html"
->
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
 
 <style>
@@ -31,8 +31,11 @@
 <h:body>
 
 
+<ui:include src="i18n.xhtml"></ui:include>
+
+
 <div style="background-color: #ededed">
-    <h1>Sistema de controle de pessoas</h1>
+    <h1>#{rotulo['sistema.nome']}</h1>
      <br/>
     </div>
      <br/>
@@ -44,7 +47,7 @@
 <h:form>
 
 <div style="width: 80%"  align="left">
-    	<h:commandLink value="[+] Novo Cadastro" action="#{pessoaControle.iniciarCadastro}"></h:commandLink>
+    	<h:commandLink value="[+] #{rotulo['novo.cadastro']}" action="#{pessoaControle.iniciarCadastro}"></h:commandLink>
     	<br/>
     	<br/>
 </div>

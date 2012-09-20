@@ -6,9 +6,8 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import persistencia.PessoaDAO;
-
 import modelo.Pessoa;
+import persistencia.PessoaDAO;
 
 @SessionScoped
 @ManagedBean
