@@ -20,19 +20,24 @@
 	</div>
 	<br />
    <fieldset>
-      <legend>Formulário de castro</legend>
+      <legend>#{rotulo['formulario']}</legend>
 		<h:form>
+		
+		<h:messages style="color: red" />
+		
 			  <h:panelGrid columns="3">
-			      Nome
+			      Nome 
 			      <h:inputText  id="nome"  value="#{pessoaControle.pessoa.nome}" required="true"></h:inputText>
-			      <h:message for="nome"></h:message>
+			      <h:message for="nome"/>
 			      
 			  Nascimento
-			      <h:inputText  id="nascimento"  value="#{pessoaControle.pessoa.nascimento}"  required="true">
-			         <f:convertDateTime pattern="dd/MM/yyyy" ></f:convertDateTime>
-			      </h:inputText>
-			      <h:message for="nascimento"></h:message>
-			      
+<h:inputText  id="nascimento"  
+              value="#{pessoaControle.pessoa.nascimento}"  
+   requiredMessage="Digite uma data válida"  required="true">
+   <f:convertDateTime pattern="dd/MM/yyyy" ></f:convertDateTime>
+</h:inputText>
+<h:message for="nascimento"></h:message>
+    
 			     Sexo
 			      <h:inputText  id="sexo"  value="#{pessoaControle.pessoa.sexo}" required="true"></h:inputText>
 			      <h:message for="sexo"></h:message>
