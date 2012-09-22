@@ -5,6 +5,7 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:ui="http://java.sun.com/jsf/facelets">
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Insert title here</title>
 </head>
@@ -12,12 +13,14 @@
 
 <ui:include src="i18n.xhtml"></ui:include>
 
-
-
 	<div style="background-color: #ededed">
 		<h1>#{rotulo['sistema.nome']}</h1>
+		
 		<br />
 	</div>
+<h:form>
+   <h:commandLink action="lista_pessoas" ><h:graphicImage url="/img/icon_voltar.png" width="40" height="40" /> </h:commandLink>
+</h:form>
 	<br />
    <fieldset>
       <legend>#{rotulo['formulario']}</legend>
@@ -26,23 +29,23 @@
 		<h:messages style="color: red" />
 		
 			  <h:panelGrid columns="3">
-			      Nome 
+			      #{rotulo['nome']} 
 			      <h:inputText  id="nome"  value="#{pessoaControle.pessoa.nome}" required="true"></h:inputText>
 			      <h:message for="nome"/>
 			      
-			  Nascimento
+			  #{rotulo['data.nascimento']}
 <h:inputText  id="nascimento"  
               value="#{pessoaControle.pessoa.nascimento}"  
-   requiredMessage="Digite uma data válida"  required="true">
+   requiredMessage="#{rotulo['digite.data']}"  required="true">
    <f:convertDateTime pattern="dd/MM/yyyy" ></f:convertDateTime>
 </h:inputText>
 <h:message for="nascimento"></h:message>
     
-			     Sexo
+			     #{rotulo['sexo']}
 			      <h:inputText  id="sexo"  value="#{pessoaControle.pessoa.sexo}" required="true"></h:inputText>
 			      <h:message for="sexo"></h:message>
 			      
-			      <h:commandButton value="Salvar" action="#{pessoaControle.salvar}"></h:commandButton>
+			      <h:commandButton value="#{rotulo['salvar']}" action="#{pessoaControle.salvar}"></h:commandButton>
 			      
 			  </h:panelGrid>
 			  

@@ -57,41 +57,41 @@
        headerClass="hcl" rowClasses="impar, par" style="width: 80%"
     >
        <f:facet name="header">
-         Lista de Pessoas
+         #{rotulo['lista.pessoas']}
        </f:facet>
             
       <h:column>
         <f:facet name="header">
-           Nome
+           #{rotulo['nome']}
         </f:facet>
            #{pessoa.nome}
       </h:column>
     
       <h:column>
         <f:facet name="header">
-           Data de Nascimento
+           #{rotulo['data.nascimento']}
         </f:facet>
            #{pessoa.nascimento}
       </h:column>
       
       <h:column>
         <f:facet name="header">
-           Sexo
+           #{rotulo['sexo']}
         </f:facet>
            #{pessoa.sexo}
       </h:column>
 
       <h:column>
         <f:facet name="header">
-           Opções
+           #{rotulo['opcoes']}
         </f:facet>
         
            <h:commandLink action="#{pessoaControle.deletar(pessoa.codigo)}">
-              Deletar
+              #{rotulo['deletar']}
            </h:commandLink>
             | 
            <h:commandLink action="#{pessoaControle.iniciarEdicao(pessoa.codigo)}"> 
-              Editar
+              #{rotulo['editar']}
            </h:commandLink>
       </h:column>
     </h:dataTable>

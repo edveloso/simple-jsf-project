@@ -44,12 +44,13 @@ public class PessoaControle {
 		return "lista_pessoas";
 	}
 	
-	public void deletar(Integer codigo){
-		dao.deletar(codigo);
+	public String deletar(String codigo){
+		dao.deletar(Integer.valueOf(codigo));
+		return "lista_pessoas";
 	}
 
-	public String iniciarEdicao(Integer codigo){
-		pessoa = dao.obterPessoaPeloCodigo(codigo);
+	public String iniciarEdicao(String codigo){
+		pessoa = dao.obterPessoaPeloCodigo(Integer.valueOf(codigo));
 		return "pessoa";
 	}
 	
